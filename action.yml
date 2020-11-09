@@ -1,0 +1,15 @@
+name: Demo Build
+description: Builds a LabVIEW application using MGI Solution Explorer
+on: push
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: for-demo
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Build MGI Solution Explorer Solution
+        run: mgislexp build "Sample Files\Sample Solution.lvsln" Release

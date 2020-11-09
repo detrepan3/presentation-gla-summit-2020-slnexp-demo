@@ -1,0 +1,7 @@
+*.vi binary
+*.vim binary
+*.ctl binary
+
+*.lvlib -merge -text
+*.lvproj -merge -text
+*.lvclass -merge -text

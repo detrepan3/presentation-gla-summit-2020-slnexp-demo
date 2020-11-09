@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Solution Version="1.1">
+
+  <Version Build="0" Major="0" Minor="1" Patch="0"/>
+
+  <Config Name="Debug">
+    <Exclude ID="52FE1AFC-07F2-4E15-B5D0-19C24251"/>
+  </Config>
+
+  <Config Name="Release">
+    <Exclude ID="52FE1AFC-07F2-4E15-B5D0-19C24251"/>
+  </Config>
+
+  <Item ID="D07702CF-01DA-4A14-9378-E8903604" Type="Project" Version="1.1">
+    <Info Path="..\Project A\Project A.lvproj" x64="FALSE">
+      <Config Name="Debug">
+        <Debug Spec="PPL" Target="My Computer"/>
+      </Config>
+      <Config Name="Release"/>
+    </Info>
+  </Item>
+
+  <Item ID="C5FD7C89-A234-46CA-B906-5F279B59" Type="Project" Version="1.1">
+    <Info Path="..\Project B\Project B.lvproj" x64="FALSE">
+      <Config Name="Debug">
+        <Exclude Spec="Installer" Target="My Computer"/>
+        <Exclude Spec="Package" Target="My Computer"/>
+        <Debug Spec="Application" Target="My Computer"/>
+      </Config>
+      <Config Name="Release">
+        <Exclude Spec="Installer" Target="My Computer"/>
+      </Config>
+    </Info>
+  </Item>
+
+  <Item ID="52FE1AFC-07F2-4E15-B5D0-19C24251" Type="SFX" Version="1.1">
+    <Info>
+      <Input>
+        <Version>
+          <ItemID>C5FD7C89-A234-46CA-B906-5F279B59</ItemID>
+          <BuildName>Application (My Computer)</BuildName>
+          <File>Application.exe</File>
+        </Version>
+        <Item Build="Installer (My Computer)" ItemID="C5FD7C89-A234-46CA-B906-5F279B59" Path=""/>
+      </Input>
+      <Output>
+        <Directory>..\builds\Project B\SFX</Directory>
+        <Name>Project B Installer</Name>
+      </Output>
+      <SFXInfo>
+        <Quiet>FALSE</Quiet>
+        <RemoveFilesAfterCommand>FALSE</RemoveFilesAfterCommand>
+        <ExtractWindowTitle>Extracting</ExtractWindowTitle>
+        <Overwrite>TRUE</Overwrite>
+        <PostExtractCommand>Volume\install.exe</PostExtractCommand>
+        <ExtractLocation>%TEMP%\Project B</ExtractLocation>
+      </SFXInfo>
+    </Info>
+  </Item>
+
+</Solution>
